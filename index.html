@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Webseite</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Willkommen auf meiner Webseite</h1>
+        <nav>
+            <a href="/chat">Zum Chat</a>
+            <a href="/forum">Zum Forum</a>
+            <a href="/upload">Zum Upload</a> <!-- Neu -->
+        </nav>
+    </header>
+
+    <section id="text-section">
+        <h2>Ein Textabschnitt</h2>
+        <p>Hier kannst du Texte einfügen. Zum Beispiel eine Beschreibung oder einen Blog-Eintrag.</p>
+    </section>
+
+    <section id="photos-section">
+        <h2>Fotos</h2>
+        <img src="https://via.placeholder.com/300?text=Foto+1" alt="Foto 1">
+        <img src="https://via.placeholder.com/300?text=Foto+2" alt="Foto 2">
+    </section>
+
+    <section id="videos-section">
+        <h2>Videos</h2>
+        <video width="320" height="240" controls>
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Dein Browser unterstützt kein Video.
+        </video>
+    </section>
+
+    <section id="uploads-section"> <!-- Neu: Anzeige der Uploads -->
+        <h2>Hochgeladene Inhalte</h2>
+        <div id="uploads-container"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Fotos und Videos hochladen</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        <textarea id="description" name="description" placeholder="Beschreibung oder Text..."></textarea>
+        <input type="file" name="files" multiple accept="image/*,video/*">
+        <button type="submit">Hochladen</button>
+    </form>
+    <script>
+        document.getElementById('upload-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            fetch('/api/upload', {
+                method: 'POST',
+                body: formData
+            }).then(res => res.json()).then(data => {
+                alert('Upload erfolgreich!');
+                // Optional: Zur Hauptseite weiterleiten
+                window.location.href = '/';
+            }).catch(err => alert('Fehler: ' + err.message));
+        });
+    </script>
+</body>
+</html>
